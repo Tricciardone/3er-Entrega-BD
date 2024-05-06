@@ -1,8 +1,10 @@
 const express = require('express');
 const fs = require('fs');
+const WebSocket = require('ws');
 
 const app = express();
 const PORT = 8080;
+const wss = new WebSocket.Server({ port: 8081 }); // WebSocket Server
 
 // Middleware para el manejo de JSON
 app.use(express.json());
